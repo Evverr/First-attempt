@@ -1,51 +1,394 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <title>Мой первый сайт</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Пирожки с капустой | Горячие каждый день</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Oranienbaum&display=swap" rel="stylesheet" />
     <style>
+        :root {
+            --bg-cream: #fff6e4;
+            --bg-warm: #ffd79a;
+            --ink: #2d1a08;
+            --accent: #b53f13;
+            --accent-dark: #872b0a;
+            --leaf: #476d2f;
+            --card: rgba(255, 250, 238, 0.9);
+            --radius: 20px;
+            --shadow: 0 14px 34px rgba(89, 40, 6, 0.18);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            text-align: center;
-            padding-top: 50px;
+            margin: 0;
+            color: var(--ink);
+            font-family: "Comfortaa", sans-serif;
+            background:
+                radial-gradient(circle at 12% 18%, rgba(255, 240, 205, 0.95), transparent 34%),
+                radial-gradient(circle at 84% 12%, rgba(255, 203, 120, 0.6), transparent 38%),
+                linear-gradient(145deg, var(--bg-cream), var(--bg-warm));
+            min-height: 100vh;
+        }
+
+        .grain {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            opacity: 0.15;
+            background-image: radial-gradient(#6f3a0d 0.45px, transparent 0.45px);
+            background-size: 3px 3px;
+            z-index: 0;
+        }
+
+        .page {
+            position: relative;
+            z-index: 1;
+            width: min(1120px, 92vw);
+            margin: 0 auto;
+            padding: 28px 0 56px;
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 22px;
+            align-items: center;
+            padding: 30px;
+            border-radius: 32px;
+            background: linear-gradient(160deg, rgba(255, 250, 239, 0.94), rgba(255, 235, 194, 0.9));
+            box-shadow: var(--shadow);
+            animation: rise 0.8s ease both;
+        }
+
+        .badge {
+            display: inline-block;
+            margin-bottom: 14px;
+            padding: 8px 12px;
+            border-radius: 999px;
+            background: #ffe7b9;
+            color: var(--accent-dark);
+            font-size: 12px;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            font-weight: 700;
         }
 
         h1 {
-            color: #333;
+            margin: 0;
+            font-family: "Oranienbaum", serif;
+            font-size: clamp(2rem, 4vw, 4rem);
+            line-height: 1.08;
+            letter-spacing: 0.01em;
         }
 
-        p {
-            color: #666;
+        .hero p {
+            margin: 14px 0 24px;
+            line-height: 1.6;
+            font-size: 1.04rem;
+            max-width: 56ch;
         }
 
-        button {
-            padding: 10px 20px;
-            font-size: 16px;
-            background-color: #007acc;
-            color: white;
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .btn {
             border: none;
-            border-radius: 5px;
+            border-radius: 14px;
+            padding: 13px 20px;
+            font-family: inherit;
+            font-size: 0.95rem;
             cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
         }
 
-        button:hover {
-            background-color: #005f99;
+        .btn-main {
+            background: var(--accent);
+            color: #fff;
+            box-shadow: 0 8px 20px rgba(135, 43, 10, 0.28);
+        }
+
+        .btn-main:hover {
+            background: var(--accent-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-soft {
+            background: transparent;
+            border: 1px solid rgba(45, 26, 8, 0.22);
+            color: var(--ink);
+        }
+
+        .btn-soft:hover {
+            box-shadow: inset 0 0 0 999px rgba(255, 248, 230, 0.6);
+        }
+
+        .hero-photo {
+            min-height: 280px;
+            border-radius: 26px;
+            position: relative;
+            overflow: hidden;
+            background:
+                radial-gradient(circle at 62% 12%, rgba(255, 255, 255, 0.5), transparent 42%),
+                linear-gradient(160deg, #c9722d, #a95b20 42%, #8a4514 100%);
+            box-shadow: inset 0 -24px 46px rgba(42, 17, 0, 0.22);
+        }
+
+        .hero-photo::before {
+            content: "ПИРОЖКИ";
+            position: absolute;
+            top: 18px;
+            left: 18px;
+            background: rgba(255, 244, 214, 0.9);
+            border-radius: 999px;
+            padding: 7px 12px;
+            font-size: 12px;
+            letter-spacing: 0.05em;
+            color: var(--accent-dark);
+            font-weight: 700;
+        }
+
+        .hero-photo::after {
+            content: "С капустой\A белокочанной";
+            white-space: pre;
+            position: absolute;
+            bottom: 22px;
+            right: 20px;
+            text-align: right;
+            font-size: clamp(1.25rem, 2.2vw, 1.9rem);
+            font-family: "Oranienbaum", serif;
+            color: #fff8e8;
+            text-shadow: 0 2px 18px rgba(0, 0, 0, 0.25);
+            line-height: 1.15;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 16px;
+            margin: 22px 0;
+        }
+
+        .feature {
+            background: var(--card);
+            border-radius: var(--radius);
+            padding: 16px;
+            border: 1px solid rgba(95, 52, 16, 0.08);
+            box-shadow: 0 8px 20px rgba(79, 43, 8, 0.08);
+            opacity: 0;
+            transform: translateY(16px);
+            animation: rise 0.55s ease forwards;
+        }
+
+        .feature:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+
+        .feature:nth-child(3) {
+            animation-delay: 0.2s;
+        }
+
+        .feature h2 {
+            margin: 0 0 8px;
+            font-size: 1.04rem;
+            color: var(--accent-dark);
+        }
+
+        .feature p {
+            margin: 0;
+            line-height: 1.5;
+            font-size: 0.93rem;
+        }
+
+        .menu {
+            margin-top: 10px;
+            padding: 26px;
+            border-radius: 28px;
+            background: linear-gradient(165deg, #fff8e9, #ffecc8 85%);
+            box-shadow: var(--shadow);
+        }
+
+        .menu h3 {
+            margin: 0;
+            font-family: "Oranienbaum", serif;
+            font-size: clamp(1.7rem, 3.1vw, 2.45rem);
+        }
+
+        .menu-grid {
+            margin-top: 18px;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 12px;
+        }
+
+        .menu-item {
+            background: #fffdf6;
+            border: 1px solid rgba(128, 66, 24, 0.12);
+            border-radius: 14px;
+            padding: 14px;
+        }
+
+        .menu-item strong {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--accent-dark);
+            font-size: 0.98rem;
+        }
+
+        .menu-item span {
+            font-size: 0.92rem;
+            line-height: 1.5;
+        }
+
+        .calc {
+            margin-top: 18px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 12px;
+            background: #fff7e5;
+            border: 1px solid rgba(74, 39, 11, 0.14);
+            border-radius: 14px;
+            padding: 14px;
+        }
+
+        .calc input {
+            width: 90px;
+            border-radius: 10px;
+            border: 1px solid rgba(74, 39, 11, 0.25);
+            padding: 8px;
+            font-family: inherit;
+        }
+
+        .calc-total {
+            font-weight: 700;
+            color: var(--accent-dark);
+        }
+
+        footer {
+            margin-top: 22px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #6a3a16;
+            opacity: 0.9;
+        }
+
+        @keyframes rise {
+            from {
+                opacity: 0;
+                transform: translateY(18px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 920px) {
+            .hero {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-photo {
+                min-height: 230px;
+            }
+
+            .features,
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
+    <div class="grain"></div>
 
-    <h1>Привет, GitHub 🚀</h1>
-    <p>Это мой первый простой сайт</p>
+    <main class="page">
+        <section class="hero">
+            <div>
+                <span class="badge">Домашняя выпечка без компромиссов</span>
+                <h1>Пирожки с капустой, которые исчезают быстрее, чем остывают</h1>
+                <p>
+                    Печём маленькими партиями, используем только белокочанную капусту,
+                    лук и сливочное масло. Никакой красной капусты, только классический,
+                    насыщенный вкус «как у бабушки».
+                </p>
+                <div class="hero-actions">
+                    <button class="btn btn-main" onclick="scrollToMenu()">Выбрать набор</button>
+                    <button class="btn btn-soft" onclick="showPhone()">Позвонить пекарю</button>
+                </div>
+            </div>
+            <div class="hero-photo" aria-hidden="true"></div>
+        </section>
 
-    <button onclick="showMessage()">Нажми меня</button>
+        <section class="features">
+            <article class="feature">
+                <h2>Горячая доставка</h2>
+                <p>Привозим в термобоксах по городу за 45 минут, чтобы корочка осталась хрустящей.</p>
+            </article>
+            <article class="feature">
+                <h2>Честный состав</h2>
+                <p>Тесто на молоке и яйце, капуста белокочанная, морковь, лук, соль, перец и ничего лишнего.</p>
+            </article>
+            <article class="feature">
+                <h2>Выпечка каждый день</h2>
+                <p>Первая партия в 7:00, последняя в 19:30. Заказывай к завтраку, обеду или в офис.</p>
+            </article>
+        </section>
+
+        <section class="menu" id="menu">
+            <h3>Наборы пирожков с капустой</h3>
+            <div class="menu-grid">
+                <article class="menu-item">
+                    <strong>«Домашний» — 6 шт.</strong>
+                    <span>Идеально на утро. Свежеиспечённые пирожки с белокочанной капустой — 420 ₽.</span>
+                </article>
+                <article class="menu-item">
+                    <strong>«Семейный» — 12 шт.</strong>
+                    <span>Для всей семьи или гостей. В коробке соус из сметаны и зелени — 790 ₽.</span>
+                </article>
+                <article class="menu-item">
+                    <strong>«Офисный» — 24 шт.</strong>
+                    <span>Большой формат для команды. Бесплатная доставка по центру — 1490 ₽.</span>
+                </article>
+            </div>
+
+            <div class="calc">
+                <label for="qty">Сколько пирожков нужно?</label>
+                <input id="qty" type="number" min="1" max="300" value="10" />
+                <button class="btn btn-main" onclick="calculate()">Посчитать цену</button>
+                <span class="calc-total" id="total">Примерно: 700 ₽</span>
+            </div>
+        </section>
+
+        <footer>
+            Пекарня «Капустный Пирожок» • Приём заказов: 07:00-20:30
+        </footer>
+    </main>
 
     <script>
-        function showMessage() {
-            alert("Сайт работает 🎉");
+        function showPhone() {
+            alert("Для заказа звоните: +7 (999) 555-45-45");
+        }
+
+        function scrollToMenu() {
+            document.getElementById("menu").scrollIntoView({ behavior: "smooth" });
+        }
+
+        function calculate() {
+            const qty = Number(document.getElementById("qty").value);
+            const safeQty = Number.isFinite(qty) && qty > 0 ? qty : 1;
+            const pricePerPiece = 70;
+            const total = safeQty * pricePerPiece;
+            document.getElementById("total").textContent = `Примерно: ${total} ₽`;
         }
     </script>
-
 </body>
 </html>
