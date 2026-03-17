@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620" role="img" aria-labelledby="t d">
+  <title id="t">Коробка пирожков</title>
+  <desc id="d">Коробка с пирожками для доставки</desc>
+  <rect width="900" height="620" fill="#f8e5c4"/>
+  <rect x="140" y="110" width="620" height="400" rx="24" fill="#d59a5d"/>
+  <rect x="165" y="145" width="570" height="330" rx="18" fill="#f7d4a1"/>
+  <g fill="#cf8442">
+    <ellipse cx="270" cy="250" rx="85" ry="50"/>
+    <ellipse cx="450" cy="250" rx="85" ry="50"/>
+    <ellipse cx="630" cy="250" rx="85" ry="50"/>
+    <ellipse cx="360" cy="365" rx="85" ry="50"/>
+    <ellipse cx="540" cy="365" rx="85" ry="50"/>
+  </g>
+  <g stroke="#f8e5bf" stroke-width="6" fill="none" opacity="0.9">
+    <path d="M210 247 Q270 222 330 247"/>
+    <path d="M390 247 Q450 222 510 247"/>
+    <path d="M570 247 Q630 222 690 247"/>
+    <path d="M300 362 Q360 337 420 362"/>
+    <path d="M480 362 Q540 337 600 362"/>
+  </g>
+</svg>

@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="t d">
+  <title id="t">Пирожки с капустой</title>
+  <desc id="d">Иллюстрация румяных пирожков на тёплом фоне</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#f8d6a2"/>
+      <stop offset="1" stop-color="#d98035"/>
+    </linearGradient>
+    <linearGradient id="pie" x1="0" x2="1">
+      <stop offset="0" stop-color="#f3c47d"/>
+      <stop offset="1" stop-color="#b96524"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="760" fill="url(#bg)"/>
+  <g opacity="0.2" fill="#7f3f12">
+    <circle cx="150" cy="120" r="70"/>
+    <circle cx="1040" cy="100" r="90"/>
+    <circle cx="980" cy="670" r="120"/>
+  </g>
+  <ellipse cx="600" cy="620" rx="420" ry="90" fill="#8a4514" opacity="0.25"/>
+  <g transform="translate(140 150)">
+    <g transform="rotate(-8 160 260)">
+      <ellipse cx="160" cy="260" rx="160" ry="95" fill="url(#pie)"/>
+      <path d="M35 255 Q160 195 285 255" stroke="#f8dfb2" stroke-width="10" fill="none" stroke-linecap="round"/>
+      <path d="M25 273 Q160 220 295 273" stroke="#8f4618" stroke-width="7" fill="none" stroke-linecap="round" opacity="0.55"/>
+    </g>
+    <g transform="translate(240 40) rotate(6 180 250)">
+      <ellipse cx="180" cy="250" rx="170" ry="100" fill="url(#pie)"/>
+      <path d="M45 245 Q180 180 315 245" stroke="#f8dfb2" stroke-width="10" fill="none" stroke-linecap="round"/>
+      <path d="M35 263 Q180 205 325 263" stroke="#8f4618" stroke-width="7" fill="none" stroke-linecap="round" opacity="0.55"/>
+    </g>
+    <g transform="translate(520 100) rotate(-3 170 240)">
+      <ellipse cx="170" cy="240" rx="165" ry="96" fill="url(#pie)"/>
+      <path d="M40 235 Q170 170 300 235" stroke="#f8dfb2" stroke-width="10" fill="none" stroke-linecap="round"/>
+      <path d="M32 255 Q170 194 308 255" stroke="#8f4618" stroke-width="7" fill="none" stroke-linecap="round" opacity="0.55"/>
+    </g>
+  </g>
+  <text x="60" y="700" fill="#fff7e8" font-size="48" font-family="Verdana, sans-serif" font-weight="700">Горячие пирожки с белокочанной капустой</text>
+</svg>

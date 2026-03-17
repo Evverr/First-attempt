@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620" role="img" aria-labelledby="t d">
+  <title id="t">Пирожки на доске</title>
+  <desc id="d">Пирожки с капустой на деревянной доске</desc>
+  <rect width="900" height="620" fill="#f7e2be"/>
+  <rect x="60" y="80" width="780" height="460" rx="36" fill="#bc7a3d"/>
+  <g fill="#d6914d">
+    <ellipse cx="220" cy="250" rx="130" ry="78"/>
+    <ellipse cx="450" cy="230" rx="130" ry="78"/>
+    <ellipse cx="670" cy="260" rx="130" ry="78"/>
+    <ellipse cx="330" cy="380" rx="130" ry="78"/>
+    <ellipse cx="560" cy="390" rx="130" ry="78"/>
+  </g>
+  <g stroke="#f6ddb5" stroke-width="8" fill="none" opacity="0.9">
+    <path d="M130 245 Q220 205 310 245"/>
+    <path d="M360 225 Q450 185 540 225"/>
+    <path d="M580 255 Q670 215 760 255"/>
+    <path d="M240 375 Q330 335 420 375"/>
+    <path d="M470 385 Q560 345 650 385"/>
+  </g>
+</svg>

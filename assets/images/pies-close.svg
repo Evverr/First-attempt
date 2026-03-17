@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620" role="img" aria-labelledby="t d">
+  <title id="t">Крупный план пирожка</title>
+  <desc id="d">Крупный план румяного пирожка с надрезом</desc>
+  <defs>
+    <radialGradient id="g" cx="50%" cy="40%" r="65%">
+      <stop offset="0" stop-color="#ffd79f"/>
+      <stop offset="1" stop-color="#be6d2a"/>
+    </radialGradient>
+  </defs>
+  <rect width="900" height="620" fill="#f4dfb7"/>
+  <ellipse cx="450" cy="325" rx="320" ry="180" fill="url(#g)"/>
+  <path d="M170 320 Q450 170 730 320" stroke="#f8e5bf" stroke-width="13" fill="none" stroke-linecap="round"/>
+  <path d="M160 345 Q450 205 740 345" stroke="#8f491c" stroke-width="10" fill="none" stroke-linecap="round" opacity="0.55"/>
+  <path d="M430 265 Q450 248 470 265 Q450 315 430 265" fill="#7aa14a" opacity="0.65"/>
+  <circle cx="450" cy="320" r="8" fill="#7aa14a"/>
+</svg>
